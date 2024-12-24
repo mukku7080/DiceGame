@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Score from './Score'
 import styled from 'styled-components'
 import Numbers from './Numbers';
@@ -63,6 +63,11 @@ const PlayGame = () => {
   const [error, setError] = useState();
   const [showRules, setShowRules] = useState(false);
 
+  useEffect(() => {
+    console.log(currentDiceNumber)
+  }, [currentDiceNumber]);
+
+
 
 
   const Random = (min, max) => {
@@ -78,14 +83,13 @@ const PlayGame = () => {
       setError("")
     }
     const number = Random(0, 6);
-    setCurrentDiceNumber(number)
-    console.log(currentDiceNumber)
+    setCurrentDiceNumber(number);
 
-    if (currentDiceNumber === num) {
-      setScore((prev) => prev + currentDiceNumber)
+    if (number === num) {
+      setScore((prev) => prev + number);
     }
     else {
-      setScore((prev) => prev - 2)
+      setScore((prev) => prev - 2);
     }
     setNum(undefined);
   }

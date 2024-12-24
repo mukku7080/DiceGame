@@ -7,7 +7,7 @@ const RoleDice = (props) => {
   return (
     <Dice>
     <div  className='dice'   >
-    <img onClick={props.rdm}  src={`/images/dice_${props.currentNumber}.png`} alt="dice_1" />
+    <img onClick={()=>props.rdm()}  src={`/images/dice_${props.currentNumber}.png`} alt="dice_1" />
     </div>
         <h4 className='text'>Click On Dice To Role</h4>
 
